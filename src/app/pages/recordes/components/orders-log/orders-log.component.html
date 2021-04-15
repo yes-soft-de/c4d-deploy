@@ -1,0 +1,62 @@
+<div class="all-logs" *ngIf="allLogs">
+    <h1 class="bg-light-blue text-white font-weight-bold p-3">{{'order-log' | translate}}</h1>
+    <p class="col-12 text-grey-blue text-center">
+        {{'final-order' | translate}}: <span class="text-light-blue">{{allLogs?.orderStatus.finalOrder}}</span>
+    </p>
+    <p class="col-12 text-grey-blue text-center">
+        {{'completion-time' | translate}}:
+        <span class="text-light-blue" style="display: inline-block; direction: ltr;">{{allLogs?.orderStatus.completionTime}}</span>
+    </p>
+    <div *ngIf="allLogs.record.length !== 0">
+        <div class="container-fluid">
+            <!-- <div class="order-log-search mt-4">
+                <form class="form-inline">
+                    <div class="w-100 input-group mb-2 mr-sm-2">
+                        <input type="text"
+                                class="form-control"
+                                id="inlineFormInputGroupUsername2"
+                                name="search"
+                                [(ngModel)]="name"
+                                (keyup)="applyFilter()"
+                                placeholder="Search for State, Order ID or date ex: 2020-12-22">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-search fa-fw text-muted" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+            <div class="">
+                <div class="table-responsive text-center">
+                    <table class="table">
+                        <thead class="text-light-blue">
+                            <tr style="white-space: nowrap;">
+                            <th scope="col" style="border-top: none;">{{'order-id' | translate}}</th>
+                            <th scope="col" style="border-top: none;">{{'state' | translate}}</th>
+                            <th scope="col" style="border-top: none;">{{'date' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let log of allLogsListFilter">
+                                <th scope="row">{{log?.orderID ? log?.orderID : '-'}}</th>
+                                <th scope="row">{{log?.state ? log?.state : '-'}}</th>
+                                <th scope="row">{{log?.date ? (log?.date.timestamp * 1000 | date : 'MMM d, y, h:mm:ss a') : '-' }}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--.card-->
+        </div>
+    </div>
+    <div *ngIf="allLogs.record.length === 0">
+        <div class="container">
+            <div class="alert alert-primary text-center mt-5">{{'log-not-exists' | translate}}</div>
+            <!-- <a routerLink="/animes/add" class="btn btn-primary btn-sm mb-2 float-right">
+                <i class="fa fa-plus"></i>
+                Add New Anime
+            </a> -->
+        </div>
+    </div>
+</div>
+<div *ngIf="allLogs == null">
+    <div class="lds-ring {{parentOrderID ? 'position-sticky' : ''}}"><div></div><div></div><div></div><div></div></div>
+</div>

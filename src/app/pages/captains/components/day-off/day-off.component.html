@@ -1,0 +1,153 @@
+<div class="day-off">
+    <h1 class="bg-light-blue text-white font-weight-bold p-3">{{'day-off' | translate}}</h1>
+  <!-- general form elements -->
+    <div class="container">
+      <!--<div class="content-header">
+        <h1 class="text-center mt-5 mb-3">{{'direct-support-information' | translate}}</h1>
+      </div>-->
+      <div class="card card-info mt-4 mb-5">
+
+        <div class="card-header bg-light-blue text-white p-3">
+           <h3 class="card-title mb-0">{{'new-day-off' | translate}}</h3>
+        </div>
+        <!-- /.card-header -->
+
+        <!-- form start -->
+        <form [formGroup]="addDayOffForm" (ngSubmit)="onSubmit()">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleInputCaptianId1">{{'captains' | translate}}</label>
+              <select class="form-control"
+                      [ngClass]="{'is-invalid': addDayOffForm.get('captainId').errors &&
+                       (addDayOffForm.get('captainId').touched || addDayOffForm.get('captainId').dirty)}"
+                      name="captainId"
+                      formControlName="captainId"
+                      id="exampleInputCaptianId1"
+                      (change)="changeCaptain($event)">
+                <option value="">{{'select-captain' | translate}}</option>
+                <option *ngFor="let captain of captains" value="{{captain?.captainID}}">{{captain?.name}}</option>
+              </select>
+              <span class="invalid-feedback" *ngIf="addDayOffForm.get('captainId').errors?.required">{{'captain-field-is-required' | translate}}</span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputState1">{{'state' | translate}}</label>
+              <select class="form-control"
+                      [ngClass]="{'is-invalid': addDayOffForm.get('state').errors &&
+                       (addDayOffForm.get('state').touched || addDayOffForm.get('state').dirty)}"
+                      name="state"
+                      formControlName="state"
+                      id="exampleInputState1"
+                      (change)="changeCaptainState($event)">
+                <option value="">{{'select-state' | translate}}</option>
+                <option value="vacation">{{'vacation' | translate}}</option>
+                <option value="work">{{'work' | translate}}</option>
+              </select>
+              <span class="invalid-feedback" *ngIf="addDayOffForm.get('state').errors?.required">{{'captain-state-field-is-required' | translate}}</span>
+            </div>
+            <div class="form-group" *ngIf="activateDate">
+              <label for="exampleInputStartDate1">{{'start-date' | translate}}</label>
+              <input type="date"
+                     [ngClass]="{'is-invalid': addDayOffForm.get('startDate')?.errors &&
+                             (addDayOffForm.get('startDate')?.touched || addDayOffForm.get('startDate')?.dirty)}"
+                     name="startDate"
+                     formControlName="startDate"
+                     id="exampleInputStartDate1"
+                     class="form-control">
+              <span class="invalid-feedback" *ngIf="addDayOffForm.get('startDate')?.errors?.required">{{'start-date-field-required' | translate}}</span>
+            </div>
+            <div class="form-group" *ngIf="activateDate">
+              <label for="exampleInputEndDate1">{{'end-date' | translate}}</label>
+              <input type="date"
+                     [ngClass]="{'is-invalid': addDayOffForm.get('endDate')?.errors &&
+                             (addDayOffForm.get('endDate')?.touched || addDayOffForm.get('endDate')?.dirty)}"
+                     name="endDate"
+                     formControlName="endDate"
+                     id="exampleInputEndDate1"
+                     class="form-control">
+              <span class="invalid-feedback" *ngIf="addDayOffForm.get('endDate')?.errors?.required">{{'end-date-field-required' | translate}}</span>
+            </div>
+          </div>
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn bg-light-blue text-white" [disabled]="addDayOffForm.invalid || isSubmited">{{'send' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.card -->
+    </div>
+    <div *ngIf="dayOffCaptains && dayOffCaptainsList?.length != 0">
+        <div class="container-fluid">
+            <div class="card border bg-white text-light-blue mt-2 mt-sm-3 mt-md-4">
+                <div class="card-header bg-white py-3">{{'day-Off-captains' | translate}}</div>
+                <div class="card-body table-responsive bg-white text-center">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">#ID</th> -->
+                                <th scope="col">{{'image' | translate}}</th>
+                                <th scope="col">{{'name' | translate}}</th>
+                                <th scope="col" style="white-space: nowrap;">{{'driving-licence' | translate }}</th>
+                                <th scope="col">{{'age' | translate}}</th>
+                                <th scope="col">{{'bounce' | translate}}</th>
+                                <!-- <th scope="col" style="white-space: nowrap;">{{'captain-id' | translate}}</th> -->
+                                <th scope="col">{{'car' | translate }}</th>
+                                <th scope="col">{{'location' | translate }}</th>
+                                <th scope="col">{{'rating' | translate }}</th>
+                                <th scope="col">{{'salary' | translate }}</th>
+                                <th scope="col">{{'State' | translate }}</th>
+                                <th scope="col">{{'status' | translate }}</th>
+<!--                                <th scope="col">{{'control' | translate }}</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let dayOffCaptain of dayOffCaptainsList | paginate: config">
+                                <!-- <th scope="row">{{dayOffCaptain.id}}</th> -->
+                                <th><img src="{{dayOffCaptain?.image}}" (error)="dayOffCaptain.image = '../../../../../../../assets/default-avatar.jpg'" alt="{{dayOffCaptain.name}} Image" class="img-thumbnail img-custom"></th>
+                                <th scope="row">{{dayOffCaptain?.name ? dayOffCaptain?.name : '-'}}</th>
+                                <th><img src="{{dayOffCaptain?.drivingLicence}}" (error)="dayOffCaptain.drivingLicence = '../../../../../../../assets/default-avatar.jpg'" alt="{{dayOffCaptain.name}} driving Licence" class="img-thumbnail img-custom"></th>
+                                <th scope="row">{{dayOffCaptain?.age ? dayOffCaptain?.age : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.bounce ? dayOffCaptain?.bounce : '-'}}</th>
+                                <!-- <th scope="row">{{dayOffCaptain?.captainID ? dayOffCaptain?.captainID : '-'}}</th> -->
+                                <th scope="row">{{dayOffCaptain?.car ? dayOffCaptain?.car : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.location ? dayOffCaptain?.location : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.rating ? dayOffCaptain?.rating : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.salary ? dayOffCaptain?.salary : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.state ? dayOffCaptain?.state : '-'}}</th>
+                                <th scope="row">{{dayOffCaptain?.status ? dayOffCaptain?.status : '-'}}</th>
+<!--                                <th scrope="row">-->
+<!--                                    <a routerLink="/captains/view/day-off/{{dayOffCaptain.id}}" class="text-success">{{'view' | translate}}</a>-->
+<!--                                </th>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--.card-->
+            <div class="mt-3 text-center">
+                <pagination-controls class="my-pagination"
+                        (pageChange)="pageChanged($event)"
+                        autoHide="true"
+                        maxSize="5"
+                        responsive="true"
+                        previousLabel="{{'prev' | translate}}"
+                        nextLabel="{{'next' | translate}}"
+                        screenReaderPaginationLabel="Pagination"
+                        screenReaderPageLabel="page"
+                        screenReaderCurrentLabel="{{'you-are-on-page' | translate}}">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!dayOffCaptains && dayOffCaptainsList?.length == 0">
+        <div class="container">
+            <div class="alert alert-primary text-center mt-5">{{'day-off-captains-not-exists' | translate}}</div>
+            <!-- <a routerLink="/animes/add" class="btn btn-primary btn-sm mb-2 float-right">
+                <i class="fa fa-plus"></i>
+                Add New Anime
+            </a> -->
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="dayOffCaptains == null">
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+</div> -->
