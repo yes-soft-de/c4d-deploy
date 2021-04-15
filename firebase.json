@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "c4d-dashboard",
-      "public": "dist/c4d-dashboard/browser",
+      "public": "dist",
       "ignore": [
         "**/.*"
       ],

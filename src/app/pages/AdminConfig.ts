@@ -1,8 +1,10 @@
+import { environment } from "src/environments/environment.prod";
+
 export class AdminConfig {
   // An Example | Delete The Content When Started
   // source api
-  // public static sourceAPI                   = 'http://34.121.141.34/html/public/index.php/';
-  public static sourceAPI                   = 'http://c4d.yes-cloud.de/html/public/index.php/';
+
+  public static sourceAPI                   = environment.sourceAPI;
 
   // All Application Api
   public static loginAPI                    = AdminConfig.sourceAPI + 'login_check';
