@@ -33,7 +33,7 @@ export class ContractsDashboardComponent implements OnInit {
     .subscribe(
       (contractsResponse: ContractsDashboardResponse) => {
         if (contractsResponse) {
-          console.log('contractsResponse', contractsResponse);
+          // console.log('contractsResponse', contractsResponse);
           this.countPendingContracts = contractsResponse.Data[0].countPendingContracts;
           this.countDoneContracts = contractsResponse.Data[1].countDoneContracts;
           this.NewUsersThisMonth = contractsResponse.Data[2].NewUsersThisMonth;

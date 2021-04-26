@@ -29,7 +29,7 @@ export class StoreOwnersComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         (storeOwnersResponse: StoreOwnersResponse) => {
           if (storeOwnersResponse) {
-            console.log('storeOwnersResponse', storeOwnersResponse);
+            // console.log('storeOwnersResponse', storeOwnersResponse);
             this.storeOwners = storeOwnersResponse.Data
             this.storeOwnersList = storeOwnersResponse.Data.reverse();
           }

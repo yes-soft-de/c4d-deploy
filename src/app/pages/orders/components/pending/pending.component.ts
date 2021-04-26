@@ -33,7 +33,7 @@ export class PendingComponent implements OnInit {
             this.pendingOrders = pendingOrders.Data;
             this.pendingOrdersList = pendingOrders.Data.reverse();
           }
-          console.log(pendingOrders);
+          // console.log(pendingOrders);
         },
         error => {
           console.log(error);

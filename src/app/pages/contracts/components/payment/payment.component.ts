@@ -49,7 +49,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$)).subscribe(
         (allOwnersResponse: AllOwnersResponse) => {
           if (allOwnersResponse) {
-            console.log('allOwnersResponse', allOwnersResponse);
+            // console.log('allOwnersResponse', allOwnersResponse);
             this.owners = allOwnersResponse.Data;
           }
         },
@@ -62,7 +62,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
     this.ownerService.paymentsOfOwner(ownerID).subscribe(
       (ownerPaymentDetailsResponse: any) => {
         if (ownerPaymentDetailsResponse) {
-          console.log('ownerPaymentDetailsResponse', ownerPaymentDetailsResponse.Data);
+          // console.log('ownerPaymentDetailsResponse', ownerPaymentDetailsResponse.Data);
           this.ownerPaymentDetails = ownerPaymentDetailsResponse.Data;        
           this.ownerPaymentDetailsList = ownerPaymentDetailsResponse.Data.payments;
         }

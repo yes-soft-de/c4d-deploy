@@ -32,7 +32,7 @@ export class OrderDetailsComponent implements OnInit {
       .subscribe(
         (orderDetail: OrderDetailsResponse) => {
           if (orderDetail) {
-            console.log('Order Details: ', orderDetail);
+            // console.log('Order Details: ', orderDetail);
             this.orderDetails = orderDetail.Data;
           }
         },

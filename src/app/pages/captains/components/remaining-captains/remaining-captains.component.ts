@@ -27,7 +27,7 @@ export class RemainingCaptainsComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.remainingCaptains = data.Data.response;
         this.remainingCaptainsList = this.remainingCaptains;
       }, error => console.log(error),

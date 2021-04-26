@@ -31,7 +31,7 @@ export class PackageDetailsComponent implements OnInit {
       .subscribe(
         (packageDetails: PackagesResponse) => {
           if (packageDetails) {
-            console.log('Package Details: ', packageDetails);
+            // console.log('Package Details: ', packageDetails);
             this.packageDetails = packageDetails.Data[0];
           }
         },

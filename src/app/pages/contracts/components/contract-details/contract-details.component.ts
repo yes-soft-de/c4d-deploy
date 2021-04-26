@@ -34,7 +34,7 @@ export class ContractDetailsComponent implements OnInit {
       .subscribe(
         (contractDetail: ContractDetailsResponse) => {
           if (contractDetail) {
-            console.log('Contract Details: ', contractDetail);
+            // console.log('Contract Details: ', contractDetail);
             this.contractDetails = contractDetail.Data[0];
           }
         },

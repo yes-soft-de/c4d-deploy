@@ -18,6 +18,7 @@ export class CaptainsComponent implements OnInit {
   allCaptainsList: AllOwners[] = [];
   config: any;
   orderID: string;
+  name: string;
 
 
   constructor(private recordService: RecordesService,
@@ -28,7 +29,7 @@ export class CaptainsComponent implements OnInit {
     this.recordService.allOwnersCaptains('captain').subscribe(
       (response: AllOwnersResponse) => {
         if (response) {
-          console.log('All Captains : ', response);
+          // console.log('All Captains : ', response);
           this.allCaptains = response.Data;
           this.allCaptainsList = response.Data.reverse();
         }
@@ -71,5 +72,29 @@ export class CaptainsComponent implements OnInit {
   pageChanged(event) {
     this.config.currentPage = event;
   }
+
+  
+  applyFilter() {
+    this.allCaptainsList = [];
+    if (!this.name) {
+      this.allCaptainsList = [...this.allCaptains];
+    } else {
+      this.allCaptainsList = this.allCaptains.filter(res => {
+        if (res.captainName) {
+          const captainName = res.captainName.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+          if (captainName) {
+            return captainName;
+          }
+        }
+        if (res.userName) {
+          const userName = res.userName.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+          if (userName) {
+            return userName;
+          }
+        }
+      })
+    }
+  }
+
 
 }

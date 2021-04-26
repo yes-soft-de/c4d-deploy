@@ -60,7 +60,7 @@ export class CaptainsDetailsComponent implements OnInit {
     .subscribe(
       (captainDetail: CaptianDetailsResponse) => {
         if (captainDetail) {
-          console.log('Captain Details: ', captainDetail);
+          // console.log('Captain Details: ', captainDetail);
           this.captainDetails = captainDetail.Data;
           this.updateFormValues();
         }

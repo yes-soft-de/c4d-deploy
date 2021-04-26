@@ -32,7 +32,7 @@ export class PendingComponent implements OnInit, OnDestroy {
             this.pendingContracts = pendingContracts.Data;
             this.pendingContractsList = pendingContracts.Data;
           }
-          console.log(pendingContracts);
+          // console.log(pendingContracts);
         },
         error => {
           console.log(error);

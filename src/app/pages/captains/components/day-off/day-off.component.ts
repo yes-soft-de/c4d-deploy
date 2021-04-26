@@ -50,7 +50,7 @@ export class DayOffComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$)).subscribe(
       dayOffResponse => {
         if (dayOffResponse) {
-          console.log(dayOffResponse);
+          // console.log(dayOffResponse);
           this.dayOffCaptains = dayOffResponse.Data.reverse();
           this.dayOffCaptainsList = dayOffResponse.Data.reverse();
         }

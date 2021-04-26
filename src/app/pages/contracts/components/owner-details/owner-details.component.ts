@@ -36,7 +36,7 @@ export class OwnerDetailsComponent implements OnInit {
       .subscribe(
         (ownerDetail: any) => {
           if (ownerDetail) {
-            console.log('Owner Details: ', ownerDetail);
+            // console.log('Owner Details: ', ownerDetail);
             this.ownerDetails = ownerDetail.Data;
             ownerDetail.Data.branches.map((e, i) => {
               this.ownerDetailsBranches.push({id: i + 1, brancheName: e.brancheName});

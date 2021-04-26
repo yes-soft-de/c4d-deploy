@@ -27,7 +27,7 @@ export class AllCaptainsComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         captainsResponse => {
           if (captainsResponse) {
-            console.log('captainsResponse', captainsResponse);
+            // console.log('captainsResponse', captainsResponse);
             this.captains = captainsResponse.Data
             this.captainsList = captainsResponse.Data.reverse();
           }

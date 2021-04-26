@@ -28,7 +28,7 @@ export class AllReportsComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         (reportsResponse: any) => {
           if (reportsResponse) {
-            console.log('reportsResponse', reportsResponse);
+            // console.log('reportsResponse', reportsResponse);
             this.reports = reportsResponse.Data
             this.reportsList = reportsResponse.Data.reverse();
             this.config = {

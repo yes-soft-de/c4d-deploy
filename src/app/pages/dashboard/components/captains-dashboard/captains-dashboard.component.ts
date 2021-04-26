@@ -23,7 +23,7 @@ export class CaptainsDashboardComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe((captainsResponse: CaptainsDashboardResponse) => {
       if (captainsResponse) {
-        console.log(captainsResponse);
+        // console.log(captainsResponse);
         this.countPendingCaptains = captainsResponse.Data[0].countPendingCaptains;
         this.countOngoingCaptains = captainsResponse.Data[1].countOngoingCaptains;
         this.countDayOfCaptains = captainsResponse.Data[2].countDayOfCaptains;

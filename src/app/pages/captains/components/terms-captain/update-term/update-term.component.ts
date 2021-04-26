@@ -63,7 +63,7 @@ export class UpdateTermComponent implements OnInit {
         this.updateTermForm.reset();
         this.isSubmited = false;
         this.toaster.success('Updated Successfully');
-        console.log('Update Data', data);
+        // console.log('Update Data', data);
         this.router.navigate(['../'], {relativeTo: this.activatedRoute});
       }
     );

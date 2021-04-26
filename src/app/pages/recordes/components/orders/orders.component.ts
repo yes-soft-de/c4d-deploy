@@ -32,7 +32,7 @@ export class OrdersComponent implements OnInit, OnDestroy {
     this.recordService.allOrders().subscribe(
       (response: AllOrdersResponse) => {
         if (response) {
-          console.log('All Orders : ', response);
+          // console.log('All Orders : ', response);
           this.allOrders = response.Data;
           this.allOrdersList = response.Data.reverse();
         }

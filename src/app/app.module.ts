@@ -15,6 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SidebarComponent } from './@theme/components';
 import {environment} from '../environments/environment';
 import * as environmentProd from '../environments/environment.prod';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
   if (environment.production) {
@@ -52,7 +53,10 @@ const firebaseConfig = environmentProd.environment.firebaseConfig;
       }
     })
   ],
-  providers: [AngularFirestore],
+  providers: [
+    AngularFirestore,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })

@@ -71,7 +71,7 @@ export class StaticDetailsComponent implements OnInit, OnDestroy {
     .subscribe(
       statisticsResponse => {
         if (statisticsResponse) {
-          console.log('Statistics details', statisticsResponse.Data, this.user);
+          // console.log('Statistics details', statisticsResponse.Data, this.user);
           this.statisticsDetails = statisticsResponse;
           if (this.user == 'captain') {            
             // clear the cart data array 

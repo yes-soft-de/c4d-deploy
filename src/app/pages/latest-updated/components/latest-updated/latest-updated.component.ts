@@ -41,7 +41,7 @@ export class LatestUpdatedComponent implements OnInit {
           this.noData = false;
           this.latestUpdated = data.Data.reverse();
           this.latestUpdatedList = this.latestUpdated;
-          console.log(data);
+          // console.log(data);
         }
       }, error => this.handleError(error),
       () => {

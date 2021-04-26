@@ -28,7 +28,7 @@ export class ListPackagesComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         packagesResponse => {
           if (packagesResponse) {
-            console.log('packagesResponse', packagesResponse);
+            // console.log('packagesResponse', packagesResponse);
             this.packages = packagesResponse.Data
             this.packagesList = packagesResponse.Data.reverse();
           }

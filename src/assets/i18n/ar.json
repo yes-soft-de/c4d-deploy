@@ -180,6 +180,8 @@
     "statistic-captain-search-input": "ابحث عن اسم الكابتن",
     "statistic-owner-search-input": "ابحث عن اسم المستخدم",
     "record-order-search-input": "ابحث عن اسم الكابتن واسم مالك المتجر",
+    "record-captain-search-input": "ابحث عن اسم الكابتن واسم مالك المتجر",
+    "record-owner-search-input": "ابحث عن اسم الكابتن واسم مالك المتجر",
     "remaining-captain-search-input": "ابحث عن اسم الكابتن",
     "top-captains-storeOwners": "أفضل 15 (الكابتن ومالكي المتاجر)",
     "store-owners": "مالكين المتاجر",

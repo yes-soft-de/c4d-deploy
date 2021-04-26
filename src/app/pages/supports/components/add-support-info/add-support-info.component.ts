@@ -41,7 +41,7 @@ export class AddSupportInfoComponent implements OnInit {
   getSupportInformation() {
     this.supportService.getSupportInformation().subscribe(
       (data: SupportInformationRequestResponse) => {
-        console.log('data', data);
+        // console.log('data', data);
         this.noData = false;
         this.supportInformation = data.Data[0];
         this.fillingFormInputs(data.Data[0]);

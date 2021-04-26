@@ -28,7 +28,7 @@ export class TopCaptainsComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         (captainsResponse: TopCaptiansResponse) => {
           if (captainsResponse) {
-            console.log('captainsResponse', captainsResponse);
+            // console.log('captainsResponse', captainsResponse);
             this.captains = captainsResponse.Data
             this.captainsList = captainsResponse.Data;
           }

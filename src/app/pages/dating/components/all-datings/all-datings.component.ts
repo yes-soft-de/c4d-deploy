@@ -30,7 +30,7 @@ export class AllDatingsComponent implements OnInit {
     .pipe(takeUntil(this.destroy$)).subscribe(
       (datingsResponse: DatingsResponse) => {
         if (datingsResponse) {
-          console.log('datingsResponse', datingsResponse);
+          // console.log('datingsResponse', datingsResponse);
           this.datings = datingsResponse.Data
           this.datingsList = datingsResponse.Data.reverse();
         }

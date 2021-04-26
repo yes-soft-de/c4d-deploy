@@ -31,7 +31,7 @@ export class OngoingComponent implements OnInit, OnDestroy {
           if (ongingCaptains) {
             this.ongoingCaptains = ongingCaptains.Data;
             this.ongoingCaptainsList = ongingCaptains.Data;
-            console.log(ongingCaptains);
+            // console.log(ongingCaptains);
           }
         },
         error => {

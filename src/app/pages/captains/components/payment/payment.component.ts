@@ -58,7 +58,7 @@ export class PaymentComponent implements OnInit {
     .pipe(takeUntil(this.destroy$)).subscribe(
       captainsResponse => {
         if (captainsResponse) {
-          console.log('captainsResponse', captainsResponse);
+          // console.log('captainsResponse', captainsResponse);
           this.captains = captainsResponse.Data;
         }
       },
@@ -71,7 +71,7 @@ export class PaymentComponent implements OnInit {
     this.captainService.captianTotalBounce(captainID).subscribe(
       (captainTotalBounceResponse: any) => {
         if (captainTotalBounceResponse) {
-          console.log('captainTotalBounceResponse', captainTotalBounceResponse.Data);
+          // console.log('captainTotalBounceResponse', captainTotalBounceResponse.Data);
           this.captainTotalBounce = captainTotalBounceResponse.Data;
           this.captainTotalBounceList = captainTotalBounceResponse.Data.payments;
         }

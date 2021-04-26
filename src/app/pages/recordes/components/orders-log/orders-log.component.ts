@@ -37,10 +37,10 @@ export class OrdersLogComponent implements OnInit {
     this.parentEvent.subscribe(id => {
       this.orderID = id;
       this.getOrdersLog(id);
-      console.log('orderID : ', this.orderID);
+      // console.log('orderID : ', this.orderID);
     });
     if (!this.orderID) {
-        console.log('orderId: ', orderId);
+        // console.log('orderId: ', orderId);
         this.getOrdersLog(orderId);
     }
   }
@@ -53,7 +53,7 @@ export class OrdersLogComponent implements OnInit {
               this.allLogs = response.Data;
               this.allLogsList = response.Data.record;
             }
-            console.log('orders Log : ', response.Data);
+            // console.log('orders Log : ', response.Data);
           },
           error => {
             console.log(error);

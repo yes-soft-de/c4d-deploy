@@ -31,7 +31,7 @@ export class TermsCaptainComponent implements OnInit, OnDestroy {
     // check if route is change
     this.router.events.subscribe(route => {
       if (route instanceof NavigationEnd && route.urlAfterRedirects == '/captains/terms') {
-        console.log('yes route  is change to end', route);
+        // console.log('yes route  is change to end', route);
         this.getTermsCaptain();
       }
     });
@@ -49,7 +49,7 @@ export class TermsCaptainComponent implements OnInit, OnDestroy {
             this.noData = false;
             this.termCaptains = ongingCaptains.Data;
             this.termCaptainsList = ongingCaptains.Data;
-            console.log(ongingCaptains);
+            // console.log(ongingCaptains);
           }
         },
         error => this.handleError(error),

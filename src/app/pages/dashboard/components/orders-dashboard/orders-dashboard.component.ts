@@ -26,7 +26,7 @@ export class OrdersDashboardComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe((ordersResponse: OrdersDashboardResponse) => {
       if (ordersResponse) {
-        console.log('ordersResponse', ordersResponse);
+        // console.log('ordersResponse', ordersResponse);
         this.countpendingOrders = ordersResponse.Data[0].countpendingOrders;
         this.countOngoingOrders = ordersResponse.Data[1].countOngoingOrders;
         this.ordersCount = ordersResponse.Data[2].ordersCount;

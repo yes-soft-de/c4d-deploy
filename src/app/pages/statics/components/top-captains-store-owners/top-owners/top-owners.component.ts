@@ -26,7 +26,7 @@ export class TopOwnersComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         ownersResponse => {
           if (ownersResponse) {
-            console.log('ownersResponse', ownersResponse);
+            // console.log('ownersResponse', ownersResponse);
             this.owners = ownersResponse.Data
             this.ownersList = ownersResponse.Data;
           }

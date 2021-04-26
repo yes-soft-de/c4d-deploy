@@ -29,7 +29,7 @@ export class AllOwnersComponent implements OnInit {
       .pipe(takeUntil(this.destroy$)).subscribe(
         (allOwnersResponse: AllOwnersResponse) => {
           if (allOwnersResponse) {
-            console.log('allOwnersResponse', allOwnersResponse);
+            // console.log('allOwnersResponse', allOwnersResponse);
             this.allOwners = allOwnersResponse.Data
             this.allOwnersList = allOwnersResponse.Data.reverse();
           }
