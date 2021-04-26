@@ -181,6 +181,8 @@
     "statistic-captain-search-input": "Search for Captain Name",
     "statistic-owner-search-input": "Search for Owner Store Name",
     "record-order-search-input": "Search for Captain Name And Owner Store Name",
+    "record-captain-search-input": "Search for Captain Name And Owner Store Name",
+    "record-owner-search-input": "Search for Captain Name And Owner Store Name",
     "remaining-captain-search-input": "Search for Remaining Captains Name",
     "top-captains-storeOwners": "Top 15 ( Captains & Store Owners )",
     "store-owners": "Store Owners",
