@@ -1,7 +1,6 @@
 import { environment } from "src/environments/environment.prod";
 
 export class AdminConfig {
-  // An Example | Delete The Content When Started
   // source api
 
   public static sourceAPI                   = environment.sourceAPI;
