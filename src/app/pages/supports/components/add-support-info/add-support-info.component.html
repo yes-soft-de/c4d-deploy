@@ -4,12 +4,62 @@
         <h1 class="text-center mt-5 mb-3">{{'direct-support-information' | translate}}</h1>
     </div>
     <div class="card card-info mb-5">
-        <div class="card-header bg-light-blue text-white p-3">
+      <form [formGroup]="addSupportForm" (ngSubmit)="onSubmit()">
+
+        <div class="card-header bg-light-blue text-white p-3">آلية حساب بدل التوصيل
+          <!-- <h3 class="card-title mb-0">{{'new-event' | translate}}</h3> -->
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="miniKilometer">{{'kilometers-order' | translate}}</label>
+            <input type="number"
+                   [ngClass]="{'is-invalid': addSupportForm.get('kilometers').errors &&
+                           (addSupportForm.get('kilometers').touched || addSupportForm.get('kilometers').dirty)}"
+                   name="kilometers"
+                   formControlName="kilometers"
+                   id="miniKilometer"
+                   class="form-control"
+                   placeholder="{{'kilometers-order' | translate}}">
+            <span class="invalid-feedback" *ngIf="addSupportForm.get('kilometers').errors?.required">{{'kilometers-order-is-requested' | translate}}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="minKilometerBonus">{{'minKilometerBonus' | translate}}</label>
+            <input type="number"
+                   [ngClass]="{'is-invalid': addSupportForm.get('minKilometerBonus').errors &&
+                           (addSupportForm.get('minKilometerBonus').touched || addSupportForm.get('minKilometerBonus').dirty)}"
+                   name="minKilometerBonus"
+                   formControlName="minKilometerBonus"
+                   id="minKilometerBonus"
+                   class="form-control"
+                   placeholder="{{'minKilometerBonus' | translate}}">
+            <span class="invalid-feedback" *ngIf="addSupportForm.get('minKilometerBonus').errors?.required">{{'minKilometerBonus-is-requested' | translate}}</span>
+          </div>
+
+          <div class="form-group">
+            <label for="maxKilometerBonus">{{'maxKilometerBonus' | translate}}</label>
+            <input type="number"
+                   [ngClass]="{'is-invalid': addSupportForm.get('maxKilometerBonus').errors &&
+                           (addSupportForm.get('maxKilometerBonus').touched || addSupportForm.get('maxKilometerBonus').dirty)}"
+                   name="maxKilometerBonus"
+                   formControlName="maxKilometerBonus"
+                   id="maxKilometerBonus"
+                   class="form-control"
+                   placeholder="{{'maxKilometerBonus' | translate}}">
+            <span class="invalid-feedback" *ngIf="addSupportForm.get('maxKilometerBonus').errors?.required">{{'maxKilometerBonus-is-requested' | translate}}</span>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="card-header bg-light-blue text-white p-3"> معلومات الشركة
             <!-- <h3 class="card-title mb-0">{{'new-event' | translate}}</h3> -->
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form [formGroup]="addSupportForm" (ngSubmit)="onSubmit()">
+
             <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputphone1">{{'phone' | translate}}</label>

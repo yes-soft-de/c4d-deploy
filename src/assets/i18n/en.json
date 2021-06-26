@@ -145,6 +145,7 @@
     "elapsed-time": "Elapsed Time",
     "order-details": "Order Details",
     "order-created-time": "Order Created Time",
+    "delivery-time": "Delivery time",
     "payment-method": "Payment Method",
     "payment": "Payment",
     "update-date": "Update Date",
@@ -207,7 +208,7 @@
     "new-update" : "Add New Update",
     "direct-support": "Direct Support",
     "support-information": "Support Information",
-    "direct-support-information" : "Direct Support Information",
+    "direct-support-information" : "Information",
     "phone-two": "Phone Two",
     "whatsapp": "Whatsapp",
     "fax": "Fax",
@@ -231,5 +232,11 @@
     "all-remaining-captains": "All Remaining Captains",
     "remaining-captains": "Remaining Captains",
     "message-status": "Message Status",
-    "new-message": "New Message"
+    "new-message": "New Message",
+    "kilometers-order": "kilometers",
+  "kilometers-order-is-requested": "kilometers is required",
+  "minKilometerBonus": "Min kilometer bonus",
+  "maxKilometerBonus": "Max kilometer bonus",
+  "minKilometerBonus-is-requested": "Min kilometer bonus is required",
+  "maxKilometerBonus-is-requested": "Max kilometer bonus is required"
 }

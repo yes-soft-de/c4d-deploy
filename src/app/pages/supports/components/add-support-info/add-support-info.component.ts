@@ -30,7 +30,10 @@ export class AddSupportInfoComponent implements OnInit {
       fax: new FormControl('', Validators.required),
       bank: new FormControl('', Validators.required),
       stc: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      kilometers: new FormControl(''),
+      minKilometerBonus: new FormControl(''),
+      maxKilometerBonus: new FormControl('')
     });
     // run to get support data
     this.getSupportInformation();
@@ -69,7 +72,10 @@ export class AddSupportInfoComponent implements OnInit {
       fax: new FormControl(data.fax, Validators.required),
       bank: new FormControl(data.bank, Validators.required),
       stc: new FormControl(data.stc, Validators.required),
-      email: new FormControl(data.email, [Validators.required, Validators.email])
+      email: new FormControl(data.email, [Validators.required, Validators.email]),
+      kilometers: new FormControl(''),
+      minKilometerBonus: new FormControl(''),
+      maxKilometerBonus: new FormControl('')
     });
   }
 
