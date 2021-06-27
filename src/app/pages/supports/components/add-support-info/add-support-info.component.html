@@ -11,13 +11,13 @@
         </div>
         <div class="card-body">
           <div class="form-group">
-            <label for="miniKilometer">{{'kilometers-order' | translate}}</label>
+            <label for="kilometers">{{'kilometers-order' | translate}}</label>
             <input type="number"
                    [ngClass]="{'is-invalid': addSupportForm.get('kilometers').errors &&
                            (addSupportForm.get('kilometers').touched || addSupportForm.get('kilometers').dirty)}"
                    name="kilometers"
                    formControlName="kilometers"
-                   id="miniKilometer"
+                   id="kilometers"
                    class="form-control"
                    placeholder="{{'kilometers-order' | translate}}">
             <span class="invalid-feedback" *ngIf="addSupportForm.get('kilometers').errors?.required">{{'kilometers-order-is-requested' | translate}}</span>

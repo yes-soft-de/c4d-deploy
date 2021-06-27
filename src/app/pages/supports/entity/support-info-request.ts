@@ -8,8 +8,8 @@ export interface SupportInformationRequest {
     fax?: number;
     bank?: number;
     stc?: number;
-    email: string;
-    kilometers: number
-    minKilometerBonus: number
-    maxKilometerBonus: number
+    email?: string;
+    kilometers?: number
+    minKilometerBonus?: number
+    maxKilometerBonus?: number
 }

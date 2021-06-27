@@ -73,9 +73,9 @@ export class AddSupportInfoComponent implements OnInit {
       bank: new FormControl(data.bank, Validators.required),
       stc: new FormControl(data.stc, Validators.required),
       email: new FormControl(data.email, [Validators.required, Validators.email]),
-      kilometers: new FormControl(''),
-      minKilometerBonus: new FormControl(''),
-      maxKilometerBonus: new FormControl('')
+      kilometers: new FormControl(data.kilometers),
+      minKilometerBonus: new FormControl(data.minKilometerBonus),
+      maxKilometerBonus: new FormControl(data.maxKilometerBonus)
     });
   }
 
