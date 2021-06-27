@@ -68,6 +68,22 @@
                   <span class="invalid-feedback" *ngIf="uploadForm.get('bounce').errors?.required">{{'bounce-field-is-required' | translate}}</span>
                 </div>
               </div>
+              <div class="">
+                <label class="col-form-label mr-3">{{'status' | translate}}: </label>
+                <div class="d-inline-block" style="width: 70%;">
+                  <select class="form-control px-1 py-1"
+                          style="height: auto;"
+                          name="status"
+                          formControlName="status"
+                          (click)="focus()"
+                          (blur)="blur()"
+                          [attr.disabled]="isSubmitted ? '' : null"
+                          (change)="changeStatus($event)">
+                    <option value="active">{{'active' | translate}}</option>
+                    <option value="inactive">{{'inactive' | translate}}</option>
+                  </select>
+                </div>
+              </div>
               <div class="form-group mt-3" [class.d-none]="display">
                 <input class="btn btn-primary" type="submit" value="Update" [disabled]="isSubmitted">
               </div>
@@ -80,7 +96,9 @@
             <p class="ml-sm-2 ml-md-4 mb-1">{{'net-profit' | translate }} : <span>{{captainDetails?.totalBounce?.NetProfit ? captainDetails?.totalBounce?.NetProfit : '-'}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'sum-payments' | translate }} : <span>{{captainDetails?.totalBounce?.sumPayments ? captainDetails?.totalBounce?.sumPayments : '-'}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'current-total' | translate }} : <span class="{{aptainDetails?.totalBounce?.total < 0 ? 'text-danger' : ''}}">{{captainDetails?.totalBounce?.total ? captainDetails?.totalBounce?.total : '-'}}</span></p>
-            <p class="ml-sm-2 ml-md-4 mb-1">{{'status' | translate }} : <span>{{captainDetails?.status}}</span></p>
+            <!-- <p class="ml-sm-2 ml-md-4 mb-1">
+              {{'status' | translate }} : 
+              <span>{{captainDetails?.status}}</span></p>              -->
             <p class="ml-sm-2 ml-md-4 mb-1">{{'rating' | translate }} : <span>{{captainDetails?.rating.rate}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'location' | translate }} : <span>{{captainDetails?.location}}</span></p>
             <!-- <p class="ml-sm-2 ml-md-4 mb-1">{{'total-bounce' | translate}} : <span>{{captainDetails?.totalBounce?.bounce}}</span></p> -->

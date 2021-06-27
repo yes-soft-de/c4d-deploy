@@ -27,8 +27,6 @@ export class CaptainsDetailsComponent implements OnInit {
   intervalCounter: any;
 
   constructor(private captainService: CaptainsService,
-              private httpClient: HttpClient,
-              private tokenService: TokenService,
               private formBuilder: FormBuilder,
               private toaster: ToastrService,
               private router: Router,
@@ -49,7 +47,8 @@ export class CaptainsDetailsComponent implements OnInit {
     );
     this.uploadForm = this.formBuilder.group({
       salary: ['', Validators.required],
-      bounce: ['', Validators.required]
+      bounce: ['', Validators.required],
+      status: ['', Validators.required]
     });
   }
 
@@ -107,7 +106,8 @@ export class CaptainsDetailsComponent implements OnInit {
   updateFormValues() {
     this.uploadForm.patchValue({
       salary: this.captainDetails.salary,
-      bounce: this.captainDetails.bounce
+      bounce: this.captainDetails.bounce,
+      status: this.captainDetails.status
     });
   }
 
@@ -158,13 +158,21 @@ export class CaptainsDetailsComponent implements OnInit {
     }, 1000);
   }
 
+  changeStatus(event) {
+    this.uploadForm.patchValue(event.target.value, { 
+      onlySelf: true
+    });
+  }
+
   mySubmit() {
     this.isSubmitted = true;
     if (!this.uploadForm.valid) {
       this.toaster.error('Error : Form Not Valid');
+      this.isSubmitted = false;
+      return;
     } else {
       const formData = this.uploadForm.getRawValue();
-      formData.status = this.captainDetails.status;
+      // formData.status = this.captainDetails.status;
       formData.captainID = this.captainDetails.captainID;
       console.log('formData', formData);
       this.captainService.updateCaptainSalaryBounce(formData).subscribe(
