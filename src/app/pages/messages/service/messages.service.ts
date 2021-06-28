@@ -23,7 +23,7 @@ export class MessagesService {
     const chatMsg: MessageModel = {
       msg: {message: message},
       sender: clientId,
-      sentDate: this.datePipe.transform(new Date(), 'yyyy-MM-ddTHH:mm:ss', 'TZD').toString()
+      sentDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss', 'TZD').toString()
       // sentDate: Date.now().toString()
     };
     this.firestore.collection('chat_rooms')
@@ -52,7 +52,7 @@ export class MessagesService {
       this.tokenService.httpOptions()
     );
   }
-  
+
   sendNotificationToCaptainFromAdmin(roomId: string) {
     return this.httpClient.post(
       AdminConfig.notificationtoCaptainAPI,

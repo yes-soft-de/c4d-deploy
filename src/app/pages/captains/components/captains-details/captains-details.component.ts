@@ -138,7 +138,7 @@ export class CaptainsDetailsComponent implements OnInit {
     }, 100);
   }
 
-  
+
   updateMessageStatus(roomId: string, messageStatus: boolean) {
     if (messageStatus) {
       console.log('update Message Status sending ', messageStatus);

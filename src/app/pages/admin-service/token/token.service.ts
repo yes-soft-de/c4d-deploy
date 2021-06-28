@@ -14,8 +14,8 @@ export class TokenService {
     username: ''
   };
 
-  constructor() { 
-    console.log('Expire Time To Delete Your Token is : ', HelperService.millisecondToTime(this.expireTime));    
+  constructor() {
+    console.log('Expire Time To Delete Your Token is : ', HelperService.millisecondToTime(this.expireTime));
   }
 
   handle(username, token) {
@@ -81,6 +81,7 @@ export class TokenService {
     if (!itemStr) {
       return null
     }
+
     const item = JSON.parse(itemStr)
     const now = new Date()
     // compare the expiry time of the item with the current time
@@ -103,6 +104,6 @@ export class TokenService {
           Authorization: `Bearer ` + token
        })
       }
-    }    
+    }
   }
 }

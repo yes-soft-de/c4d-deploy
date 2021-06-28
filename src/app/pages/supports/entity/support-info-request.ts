@@ -1,3 +1,5 @@
+import {FormControl} from '@angular/forms';
+
 export interface SupportInformationRequest {
     id?: number;
     phone?: number;
@@ -6,5 +8,8 @@ export interface SupportInformationRequest {
     fax?: number;
     bank?: number;
     stc?: number;
-    email: string;
+    email?: string;
+    kilometers?: number
+    minKilometerBonus?: number
+    maxKilometerBonus?: number
 }

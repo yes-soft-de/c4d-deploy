@@ -143,6 +143,7 @@
     "elapsed-time": "الوقت المنقضي",
     "order-details": "تفاصيل الطلب",
     "order-created-time": "وقت إنشاء الطلب",
+    "delivery-time": "وقت التوصيل",
     "payment-method": "طريقة الدفع",
     "payment": "الدفعات",
     "update-date": "تاريخ التحديث",
@@ -206,7 +207,7 @@
     "new-update" : "اضافة تحديث جديد",
     "direct-support": "دعم مباشر",
     "support-information": "معلومات الدعم",
-    "direct-support-information" : "معلومات الدعم المباشر",
+    "direct-support-information" : "معلومات",
     "phone-two": "الرقم الثاني",
     "whatsapp": "رقم الوتس",
     "fax": "فاكس",
@@ -230,5 +231,11 @@
     "all-remaining-captains": "جميع الكباتن المتبقي لهم دفعات",
     "remaining-captains": "الكباتن المتبقي لهم دفعات",
     "message-status": "حالة الدردشة",
-    "new-message": "رسالة جديدة"
+    "new-message": "رسالة جديدة",
+    "kilometers-order": "عدد الكيلومترات",
+  "kilometers-order-is-requested": "عدد الكيلومترات مطلوب",
+  "minKilometerBonus": "قيمة التعويض في حال عدم تجاوز حد الكيلومترات",
+  "maxKilometerBonus": "قيمة التعويض في حال تجاوز حد الكيلومترات",
+  "minKilometerBonus-is-requested": "قيمة التعويض في حال عدم تجاوز حد الكيلومترات مطلوب",
+  "maxKilometerBonus-is-requested": "قيمة التعويض في حال تجاوز حد الكيلومترات مطلوب"
 }
