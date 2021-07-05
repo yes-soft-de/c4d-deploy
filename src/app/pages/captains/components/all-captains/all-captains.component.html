@@ -29,7 +29,7 @@
                                 <th scope="col" style="white-space: nowrap;">{{'driving-licence' | translate}}</th>
                                 <th scope="col">{{'age' | translate}}</th>
                                 <th scope="col">{{'bounce' | translate}}</th>
-                                <th scope="col">{{'car' | translate }}</th>
+<!--                                <th scope="col">{{'car' | translate }}</th>-->
                                 <th scope="col">{{'location' | translate }}</th>
                                 <th scope="col" style="white-space: nowrap;">{{'salary' | translate }}</th>
                                 <th scope="col" class="message-state-head" style="white-space: nowrap;">{{'message-status' | translate}}</th>
@@ -48,7 +48,7 @@
                                 <th><img src="{{captain?.drivingLicence}}" (error)="captain.drivingLicence = '../../../../../../../assets/default-avatar.jpg'" alt="{{captain.name}} driving Licence" class="img-thumbnail img-custom"></th>
                                 <th scope="row">{{captain?.age ? captain?.age : '-'}}</th>
                                 <th scope="row">{{captain?.bounce ? captain?.bounce : '-'}}</th>
-                                <th scope="row">{{captain?.car ? captain?.car : '-'}}</th>
+<!--                                <th scope="row">{{captain?.car ? captain?.car : '-'}}</th>-->
                                 <th scope="row">{{captain?.location ? captain?.location : '-'}}</th>
                                 <th scope="row">{{captain?.salary ? (captain?.salary | currency) : '-'}}</th>
                                 <th scope="row" [class.text-danger]="captain?.newMessageStatus">{{captain?.newMessageStatus ? ('new-message' | translate) : '-'}}</th>

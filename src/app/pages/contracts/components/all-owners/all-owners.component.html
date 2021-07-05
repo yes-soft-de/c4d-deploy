@@ -24,9 +24,9 @@
                             <tr>
                                 <th scope="col">{{'image' | translate}}</th>
                                 <th scope="col">{{'username' | translate}}</th>
-                                <th scope="col">{{'branch' | translate }}</th>
-                                <th scope="col">{{'city' | translate }}</th>
-                                <th scope="col">{{'free' | translate }}</th>
+<!--                                <th scope="col">{{'branch' | translate }}</th>-->
+<!--                                <th scope="col">{{'city' | translate }}</th>-->
+<!--                                <th scope="col">{{'free' | translate }}</th>-->
                                 <th scope="col">{{'control' | translate }}</th>
                             </tr>
                         </thead>
@@ -34,9 +34,9 @@
                             <tr *ngFor="let owner of allOwnersList | paginate: config">
                                 <th><img src="{{owner?.image}}" (error)="owner.image = '../../../../../../../assets/default-avatar.jpg'" alt="{{owner.name}} Image" class="img-thumbnail img-custom"></th>
                                 <th scope="row">{{owner.userName ? owner.userName : '-'}}</th>
-                                <th scope="row">{{owner.branch ? owner.branch : '-'}}</th>
-                                <th scope="row">{{owner.city ? owner.city : '-'}}</th>
-                                <th scope="row">{{owner.free ? ('yes' | translate) : ('no' | translate)}}</th>
+<!--                                <th scope="row">{{owner.branch ? owner.branch : '-'}}</th>-->
+<!--                                <th scope="row">{{owner.city ? owner.city : '-'}}</th>-->
+<!--                                <th scope="row">{{owner.free ? ('yes' | translate) : ('no' | translate)}}</th>-->
                                 <th scrope="row">
                                   <a routerLink="/contracts/owner/{{owner.userID}}" class="text-success">{{'view' | translate}}</a>
                                 </th>

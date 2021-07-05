@@ -9,6 +9,7 @@ export interface Captains {
     drivingLicence?: string;
     image?: string;
     location?: string;
+    city?: string;
     name?: string;
     rating?: { rate: number };
     salary?: number;

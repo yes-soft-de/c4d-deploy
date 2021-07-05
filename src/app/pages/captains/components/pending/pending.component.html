@@ -14,7 +14,7 @@
                             <th scope="col" style="white-space: nowrap;">{{'driving-licence' | translate }}</th>
                             <th scope="col">{{'age' | translate}}</th>
                             <!-- <th scope="col">Captain ID</th> -->
-                            <th scope="col">{{'car' | translate}}</th>
+<!--                            <th scope="col">{{'car' | translate}}</th>-->
                             <th scope="col">{{'location' | translate}}</th>
                             <!-- <th scope="col">Bounce</th>
                             <th scope="col">Rating</th>
@@ -32,8 +32,8 @@
                                 <th><img src="{{pendingCaptain?.drivingLicence}}" (error)="pendingCaptain.drivingLicence = '../../../../../../../assets/default-avatar.jpg'" alt="{{pendingCaptain.name}} driving Licence" class="img-thumbnail img-custom"></th>
                                 <th scope="row">{{pendingCaptain.age ? pendingCaptain.age : '-'}}</th>
                                 <!-- <th scope="row">{{pendingCaptain.captainID ? pendingCaptain.captainID : '-'}}</th> -->
-                                <th scope="row">{{pendingCaptain.car ? pendingCaptain.car : '-'}}</th>
-                                <th scope="row">{{pendingCaptain.location ? pendingCaptain.location : '-'}}</th>
+<!--                                <th scope="row">{{pendingCaptain.car ? pendingCaptain.car : '-'}}</th>-->
+                                <th scope="row">{{pendingCaptain.city ? pendingCaptain.city : '-'}}</th>
                                 <!-- <th scope="row">{{pendingCaptain.bounce ? pendingCaptain.bounce : '-'}}</th>
                                 <th scope="row">{{pendingCaptain.rating ? pendingCaptain.rating : '-'}}</th>
                                 <th scope="row">{{pendingCaptain.salary ? pendingCaptain.salary : '-'}}</th>

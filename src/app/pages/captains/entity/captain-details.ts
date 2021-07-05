@@ -11,6 +11,7 @@ export interface CaptainDetails {
     image: string;
     isOnline: string;
     location: string;
+    city: string;
     rating: { rate: number };
     salary: number;
     state: string;

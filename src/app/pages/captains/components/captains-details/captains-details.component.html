@@ -33,7 +33,7 @@
         </p>
         <div class="row mt-3">
           <div class="col-12 col-sm-6 captain-details-content">
-            <p class="ml-sm-2 ml-md-4 mb-1">{{'car' | translate }} : <span>{{captainDetails?.car}}</span></p>
+<!--            <p class="ml-sm-2 ml-md-4 mb-1">{{'car' | translate }} : <span>{{captainDetails?.car}}</span></p>-->
             <p class="ml-sm-2 ml-md-4 mb-1">{{'age' | translate }} : <span>{{captainDetails?.age}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'is-online' | translate}} : <span class="text-{{captainDetails?.isOnline == 'active' ? 'success' : 'danger'}}">{{captainDetails?.isOnline}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'state' | translate }} : <span>{{captainDetails?.state}}</span></p>
@@ -97,10 +97,10 @@
             <p class="ml-sm-2 ml-md-4 mb-1">{{'sum-payments' | translate }} : <span>{{captainDetails?.totalBounce?.sumPayments ? captainDetails?.totalBounce?.sumPayments : '-'}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'current-total' | translate }} : <span class="{{aptainDetails?.totalBounce?.total < 0 ? 'text-danger' : ''}}">{{captainDetails?.totalBounce?.total ? captainDetails?.totalBounce?.total : '-'}}</span></p>
             <!-- <p class="ml-sm-2 ml-md-4 mb-1">
-              {{'status' | translate }} : 
+              {{'status' | translate }} :
               <span>{{captainDetails?.status}}</span></p>              -->
-            <p class="ml-sm-2 ml-md-4 mb-1">{{'rating' | translate }} : <span>{{captainDetails?.rating.rate}}</span></p>
-            <p class="ml-sm-2 ml-md-4 mb-1">{{'location' | translate }} : <span>{{captainDetails?.location}}</span></p>
+<!--            <p class="ml-sm-2 ml-md-4 mb-1">{{'rating' | translate }} : <span>{{captainDetails?.rating.rate}}</span></p>-->
+            <p class="ml-sm-2 ml-md-4 mb-1">{{'location' | translate }} : <span>{{captainDetails?.city}}</span></p>
             <!-- <p class="ml-sm-2 ml-md-4 mb-1">{{'total-bounce' | translate}} : <span>{{captainDetails?.totalBounce?.bounce}}</span></p> -->
           </div><!--.col-12.col-ms-6-->
         </div><!--.row-->
@@ -115,3 +115,31 @@
 <div *ngIf="captainDetails == null">
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 </div>
+
+
+<!--<div *ngIf="dayOffCaptains && dayOffCaptainsList?.length != 0">-->
+<!--  <div class="container-fluid">-->
+<!--    <div class="card border bg-white text-light-blue mt-2 mt-sm-3 mt-md-4">-->
+<!--      <div class="card-header bg-white py-3">{{'day-Off-captains' | translate}}</div>-->
+<!--      <div class="card-body table-responsive bg-white text-center">-->
+<!--        <table class="table">-->
+<!--          <thead>-->
+<!--          <tr>-->
+<!--            <th scope="col">{{'image' | translate}}</th>-->
+<!--            <th scope="col">{{'name' | translate}}</th>-->
+<!--            <th scope="col" style="white-space: nowrap;">{{'driving-licence' | translate }}</th>-->
+<!--            <th scope="col">{{'location' | translate }}</th>-->
+<!--          </tr>-->
+<!--          </thead>-->
+<!--          <tbody>-->
+<!--          <tr *ngFor="let dayOffCaptain of dayOffCaptainsList | paginate: config">-->
+<!--            <th><img src="{{dayOffCaptain?.image}}" (error)="dayOffCaptain.image = '../../../../../../../assets/default-avatar.jpg'" alt="{{dayOffCaptain.name}} Image" class="img-thumbnail img-custom"></th>-->
+<!--            <th scope="row">{{dayOffCaptain?.name ? dayOffCaptain?.name : '-'}}</th>-->
+<!--            <th><img src="{{dayOffCaptain?.drivingLicence}}" (error)="dayOffCaptain.drivingLicence = '../../../../../../../assets/default-avatar.jpg'" alt="{{dayOffCaptain.name}} driving Licence" class="img-thumbnail img-custom"></th>-->
+
+<!--            <th scope="row">{{dayOffCaptain?.city ? dayOffCaptain?.city : '-'}}</th>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--    </div>-->
