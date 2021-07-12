@@ -234,9 +234,11 @@
     "message-status": "Message Status",
     "new-message": "New Message",
     "kilometers-order": "kilometers",
-  "kilometers-order-is-requested": "kilometers is required",
-  "minKilometerBonus": "Min kilometer bonus",
-  "maxKilometerBonus": "Max kilometer bonus",
-  "minKilometerBonus-is-requested": "Min kilometer bonus is required",
-  "maxKilometerBonus-is-requested": "Max kilometer bonus is required"
+    "kilometers-order-is-requested": "kilometers is required",
+    "minKilometerBonus": "Min kilometer bonus",
+    "maxKilometerBonus": "Max kilometer bonus",
+    "minKilometerBonus-is-requested": "Min kilometer bonus is required",
+    "maxKilometerBonus-is-requested": "Max kilometer bonus is required",
+    "petrolMoney": "Petrol Money",
+    "in-vacation" : "In Vacation"
 }
