@@ -10,4 +10,5 @@ export interface AllOwners {
     baseURL?: string;
     imageURL?: string;
     phone?: string;
+    uuid?: string;
 }

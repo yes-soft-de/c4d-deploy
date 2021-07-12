@@ -15,7 +15,7 @@ import { ContractsService } from '../../services/contracts.service';
   providers: [DatePipe]
 })
 export class ContractDetailsComponent implements OnInit {
-  @ViewChild('textarea') textarea: ElementRef;
+  //@ViewChild('textarea') textarea: ElementRef;
   private destroy$: Subject<void> = new Subject<void>();
   contractDetails: Contracts;
   active = true;
@@ -50,7 +50,7 @@ export class ContractDetailsComponent implements OnInit {
       id: id,
       status: state,
       endDate: this.datePipe.transform(dateAfterOneMonth, 'yyyy-MM-dd'),
-      note: this.textarea.nativeElement.value
+      //note: this.textarea.nativeElement.value
     };
 
     this.contractService.contractAccept(data).subscribe(

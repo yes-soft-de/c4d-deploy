@@ -52,6 +52,15 @@ export class CaptainsDetailsComponent implements OnInit {
     });
   }
 
+  checkCapetianVacation(state) {
+    if (state == 'active') {
+      return 'لا';
+    }
+    else {
+      return 'نعم';
+    }
+  }
+
   // Observable getCaptainDetails
   getCaptianDetails() {
     this.captainService.captainDetails(Number(this.activateRoute.snapshot.paramMap.get('id')))
@@ -159,7 +168,7 @@ export class CaptainsDetailsComponent implements OnInit {
   }
 
   changeStatus(event) {
-    this.uploadForm.patchValue(event.target.value, { 
+    this.uploadForm.patchValue(event.target.value, {
       onlySelf: true
     });
   }

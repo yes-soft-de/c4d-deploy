@@ -27,6 +27,7 @@
 <!--                                <th scope="col">{{'branch' | translate }}</th>-->
 <!--                                <th scope="col">{{'city' | translate }}</th>-->
 <!--                                <th scope="col">{{'free' | translate }}</th>-->
+                              <th scope="col" class="message-state-head" style="white-space: nowrap;">{{'message-status' | translate}}</th>
                                 <th scope="col">{{'control' | translate }}</th>
                             </tr>
                         </thead>
@@ -37,6 +38,7 @@
 <!--                                <th scope="row">{{owner.branch ? owner.branch : '-'}}</th>-->
 <!--                                <th scope="row">{{owner.city ? owner.city : '-'}}</th>-->
 <!--                                <th scope="row">{{owner.free ? ('yes' | translate) : ('no' | translate)}}</th>-->
+                              <th scope="row" [class.text-danger]="owner?.newMessageStatus">{{owner?.newMessageStatus ? ('new-message' | translate) : '-'}}</th>
                                 <th scrope="row">
                                   <a routerLink="/contracts/owner/{{owner.userID}}" class="text-success">{{'view' | translate}}</a>
                                 </th>

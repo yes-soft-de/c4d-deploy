@@ -30,6 +30,10 @@ export class AdminConfig {
   public static captainUpdateMsgStatusAPI   = AdminConfig.sourceAPI + 'captainupdatenewmessagestatus';
   public static notificationtoCaptainAPI    = AdminConfig.sourceAPI + 'notificationtocaptainfromadmin';
 
+  // Owners
+  public static ownerUpdateMsgStatusAPI   = AdminConfig.sourceAPI + 'ownerupdatenewmessagestatus';
+  public static notificationToOwnerAPI    = AdminConfig.sourceAPI + 'notificationtoownerfromadmin';
+
   // Orders
   public static pendingOrdersAPI            = AdminConfig.sourceAPI + 'getPendingOrders';
   public static orderDetailsAPI             = AdminConfig.sourceAPI + 'order';

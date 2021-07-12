@@ -35,6 +35,7 @@
           <div class="col-12 col-sm-6 captain-details-content">
 <!--            <p class="ml-sm-2 ml-md-4 mb-1">{{'car' | translate }} : <span>{{captainDetails?.car}}</span></p>-->
             <p class="ml-sm-2 ml-md-4 mb-1">{{'age' | translate }} : <span>{{captainDetails?.age}}</span></p>
+            <p class="ml-sm-2 ml-md-4 mb-1">{{'in-vacation' | translate }} : <span>{{checkCapetianVacation(captainDetails?.vacationStatus)}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'is-online' | translate}} : <span class="text-{{captainDetails?.isOnline == 'active' ? 'success' : 'danger'}}">{{captainDetails?.isOnline}}</span></p>
             <p class="ml-sm-2 ml-md-4 mb-1">{{'state' | translate }} : <span>{{captainDetails?.state}}</span></p>
             <form [formGroup]="uploadForm" (blur)="blur()" class="ml-sm-2 ml-md-4 mb-1" (ngSubmit)="mySubmit()">

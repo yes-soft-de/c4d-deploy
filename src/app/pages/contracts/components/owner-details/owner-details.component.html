@@ -17,13 +17,12 @@
                 </div><!--.captain-details-image-->
             </div>
 
-            <!-- <div class="col-12 col-sm-5 col-md-4 align-self-center text-center">
+             <div class="col-12 col-sm-5 col-md-4 align-self-center text-center">
                 <div class="captain-chat mx-auto p-1">
                     <i class="fa fa-commenting fa-fw fa-lg text-grey-blue"></i>
-                    <a class="font-weight-bold" routerLink="/chat/view/captain/{{ownerDetails?.id}}">{{'chat-with-captain' | translate}}</a>
+                    <a class="font-weight-bold" (click)="updateMessageStatus(ownerDetails?.uuid, ownerDetails?.newMessageStatus)" routerLink="/chat/view/owner/{{ownerDetails?.id}}/{{ownerDetails?.uuid}}">{{'chat-with-owner' | translate}}</a>
                 </div>
-                <a id="refresh_button" type="button" class="btn btn-primary text-white mx-auto p-1 mt-2" (click)="refresh()" style="display: inline-block;cursor: pointer;">Refresh</a>
-            </div> -->
+            </div>
         </div><!--.row-->
         <!-- <p class="ml-sm-2 ml-md-4 mb-1">{{'captain-id' | translate}} : <span>{{ownerDetails?.userID}}</span></p> -->
         <p class="ml-sm-2 ml-md-4 mb-1">{{'city' | translate }} : <span>{{ownerDetails?.city}}</span></p>

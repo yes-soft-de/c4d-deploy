@@ -28,7 +28,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   roomID: string;
   isReportChat: boolean;
   isCaptainChat: boolean;
-
+  isOwnerChat: boolean;
 
   constructor(private messageService: MessagesService,
     private captainService: CaptainsService,
@@ -53,6 +53,15 @@ export class ChatComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.params.subscribe(
       params => {
+        //k
+
+        if (params.client == 'owner') {
+          this.isOwnerChat = true;
+          this.roomID = params.uuid;
+          this.getMessages(params.uuid);
+        }
+
+        //k
         if (params.client == 'captain') {
           this.captainService.captainDetails(Number(params.id)).subscribe(
             (captainResponse: CaptianDetailsResponse) => {
@@ -263,6 +272,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     clearInterval(this.bodyScrollHeightInterval);
     this.isReportChat = false;
     this.isCaptainChat = false;
+    this.isOwnerChat = false;
     this.destroy$.next();
     this.destroy$.complete();
   }
@@ -279,6 +289,9 @@ export class ChatComponent implements OnInit, OnDestroy {
       }
       if (this.isCaptainChat) {
         this.messageService.sendNotificationToCaptainFromAdmin(this.roomID).subscribe(data => console.log('send notification : ', data));
+      }
+      if (this.isOwnerChat) {
+        this.messageService.notificationToOwnerFromAdmin(this.roomID).subscribe(data => console.log('send notification : ', data));
       }
       console.log(formMessages);
       if (formMessages.roomId) {

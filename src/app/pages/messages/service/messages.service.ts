@@ -60,4 +60,13 @@ export class MessagesService {
       this.tokenService.httpOptions()
     );
   }
+
+  notificationToOwnerFromAdmin(roomId: string) {
+    return this.httpClient.post(
+      AdminConfig.notificationToOwnerAPI,
+      {roomID: roomId},
+      this.tokenService.httpOptions()
+    );
+  }
+
 }

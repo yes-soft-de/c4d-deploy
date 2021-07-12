@@ -28,6 +28,12 @@ export class OwnerDetailsComponent implements OnInit {
     this.getOwnerDetails();
   }
 
+  updateMessageStatus(roomId: string, messageStatus: boolean) {
+    if (messageStatus) {
+      console.log('update Message Status sending ', messageStatus);
+      this.contractService.updateNewMessageStatus(roomId).subscribe(data => console.log('Update Message Status : ', data));
+    }
+  }
 
   getOwnerDetails() {
     console.log('userId: ', this.activateRoute.snapshot.paramMap.get('id'));
@@ -41,7 +47,7 @@ export class OwnerDetailsComponent implements OnInit {
             ownerDetail.Data.branches.map((e, i) => {
               this.ownerDetailsBranches.push({id: i + 1, brancheName: e.brancheName});
             });
-            
+
             this.config = {
               itemsPerPage: 5,
               currentPage: 1,
@@ -57,7 +63,7 @@ export class OwnerDetailsComponent implements OnInit {
     pageChanged(event) {
       this.config.currentPage = event;
     }
-  
+
 
 
 

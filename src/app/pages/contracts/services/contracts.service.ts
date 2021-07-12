@@ -74,4 +74,12 @@ export class ContractsService {
     ).pipe(catchError(ContractsService.errorHandle));
   }
 
+  updateNewMessageStatus(roomId: string): Observable<any> {
+    return this.httpClient.put<any>(
+      AdminConfig.ownerUpdateMsgStatusAPI,
+      {roomID: roomId},
+      this.tokenService.httpOptions()
+    );
+  }
+
 }

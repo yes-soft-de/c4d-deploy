@@ -237,5 +237,7 @@
   "minKilometerBonus": "قيمة التعويض في حال عدم تجاوز حد الكيلومترات",
   "maxKilometerBonus": "قيمة التعويض في حال تجاوز حد الكيلومترات",
   "minKilometerBonus-is-requested": "قيمة التعويض في حال عدم تجاوز حد الكيلومترات مطلوب",
-  "maxKilometerBonus-is-requested": "قيمة التعويض في حال تجاوز حد الكيلومترات مطلوب"
+  "maxKilometerBonus-is-requested": "قيمة التعويض في حال تجاوز حد الكيلومترات مطلوب",
+  "petrolMoney": "بدل بينزين",
+  "in-vacation" : "في إجازة"
 }

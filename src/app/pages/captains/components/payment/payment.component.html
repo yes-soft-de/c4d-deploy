@@ -56,6 +56,7 @@
                           <th scope="col">{{'bank-name' | translate }}</th>
                           <th scope="col">{{'account-id' | translate }}</th>
                           <th scope="col">{{'net-profit' | translate }}</th>
+                          <th scope="col">{{'petrolMoney' | translate }}</th>
                           <th scope="col">{{'bounce' | translate }}</th>
                         </tr>
                     </thead>
@@ -66,6 +67,7 @@
                           <th scope="row" class="pb-3">{{captainTotalBounce?.bank?.bankName ? captainTotalBounce?.bank?.bankName : '-'}}</th>
                           <th scope="row" class="pb-3">{{captainTotalBounce?.bank?.accountID ? captainTotalBounce?.bank?.accountID : '-'}}</th>
                           <th scope="row" class="pb-3">{{captainTotalBounce?.NetProfit ? captainTotalBounce?.NetProfit : '-'}}</th>
+                          <th scope="row" class="pb-3">{{captainTotalBounce?.kilometerBonus ? captainTotalBounce?.kilometerBonus : '-'}}</th>
                           <th scope="row" class="pb-3">{{captainTotalBounce?.bounce ? captainTotalBounce?.bounce : '-'}}</th>
                       </tr>
                       <tr class="border-top">
